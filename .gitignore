@@ -3,7 +3,7 @@
 # Logs
 logs
 *.log
-.idea/
+.idea
 
 # Runtime data
 pids
@@ -37,4 +37,26 @@ bower_components/
 build/
 dist/
 
+server/node_modules
+server/bower_components
 
+client/node_modules
+client/bower_components
+
+server/logs
+server/*.log
+server/.idea/
+
+client/logs
+client/*.log
+client/.idea/
+
+# Runtime data
+server/pids
+server/*.pid
+server/*.seed
+
+# Runtime data
+client/pids
+client/*.pid
+client/*.seed
