@@ -9,34 +9,36 @@
  * Main module of the application.
  */
 angular
-  .module('clientApp', [
-    'ngAnimate',
-    'ngAria',
-    'ngCookies',
-    'ngMessages',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-        .when('/signup', {
-          templateUrl: 'views/signup.html',
-          controller: 'SignupCtrl',
-          controllerAs: 'signup'
+    .module('clientApp', [
+        'ngAnimate',
+        'ngAria',
+        'ngCookies',
+        'ngMessages',
+        'ngResource',
+        'ngRoute',
+        'ngSanitize',
+        'ngTouch',
+        'btford.socket-io'
+    ])
+    .value('nickName', 'anonymous')
+    .config(function ($routeProvider) {
+        $routeProvider
+            .when('/', {
+                templateUrl: 'views/main.html',
+                controller: 'MainCtrl',
+                controllerAs: 'main'
         })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+            .when('/about', {
+                templateUrl: 'views/about.html',
+                controller: 'AboutCtrl',
+                controllerAs: 'about'
+            })
+            .when('/signup', {
+                templateUrl: 'views/signup.html',
+                controller: 'SignupCtrl',
+                controllerAs: 'signup'
+            })
+            .otherwise({
+                redirectTo: '/'
+            });
+    });

@@ -5,6 +5,20 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+var schedule = require('./includes/job-schedule.js').setup();
+/*
+ schedule.jobs({name: 'show message'}, function(err, jobs) {
+ // Work with jobs (see below)
+ console.log(jobs);
+ });*/
+
+function graceful() {
+    schedule.stop(function () {
+        process.exit(0);
+    });
+}
+process.on('SIGTERM', graceful);
+process.on('SIGINT', graceful);
 
 var app = express();
 

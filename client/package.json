@@ -36,5 +36,8 @@
   },
   "scripts": {
     "test": "grunt test"
+  },
+  "dependencies": {
+    "eventsource": "^0.1.6"
   }
 }
