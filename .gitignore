@@ -60,3 +60,5 @@ server/*.seed
 client/pids
 client/*.pid
 client/*.seed
+
+data/

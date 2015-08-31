@@ -47,13 +47,14 @@ angular.module('clientApp') // make sure this is set to whatever it is in your c
 
             // we'll come back to here and fill in more when ready
             request.success(function (data) {
-                // to be filled in on success
-                return data;
+                // our json response is recognized as
+                // the data parameter here. See? Our msg
+                // value is right there!
+                console.log(data.msg);
             });
 
             request.error(function (data) {
-                // to be filled in on error
-                return data;
+                console.log(data.msg);
             });
 
         };
