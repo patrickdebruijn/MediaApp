@@ -22,6 +22,7 @@ http://start.jcolemorrison.com/building-an-angular-and-express-app-part-1/
 http://start.jcolemorrison.com/building-an-angular-and-express-app-part-2/
 http://start.jcolemorrison.com/building-an-angular-and-express-app-part-3/
 https://github.com/krimple/angular-socketio-chat   /    http://chariotsolutions.com/blog/post/getting-chatty-angular-socket-io-nodeexpress-bootstrap/
+https://github.com/JustGoscha/allmighty-autocomplete
 
 ## Requirements
 - NodeJS

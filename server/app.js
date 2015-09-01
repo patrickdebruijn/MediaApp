@@ -21,6 +21,10 @@ process.on('SIGTERM', graceful);
 process.on('SIGINT', graceful);
 
 var app = express();
+//
+var io = require('socket.io').listen(app.listen(3000));
+
+require('./sockets/base')(io);
 
 
 // uncomment after placing your favicon in /public
@@ -31,7 +35,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json({type: 'application/vnd.api+json'}));
 app.use(methodOverride());
 app.use(cookieParser());
-
+require('./router')(app);
 /**
  * Development Settings
  */
@@ -55,7 +59,7 @@ if (app.get('env') === 'production') {
 /**
  * Routes
  */
-var router = require('./router')(app);
+
 
 // Error Handling
 app.use(function (err, req, res, next) {

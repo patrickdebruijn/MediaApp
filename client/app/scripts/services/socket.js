@@ -1,7 +1,7 @@
 'use strict';
 angular.module('clientApp')
-    .factory('chatSocket', function (socketFactory) {
+    .factory('notificationSocket', function (socketFactory) {
         var socket = socketFactory();
-        socket.forward('broadcast');
+        socket.forward('showNotification');
         return socket;
     });

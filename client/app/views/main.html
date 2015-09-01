@@ -1,63 +1,48 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-
-  <p>
-    <a href="#/signup" class="btn btn-lg btn-success">
-      Signup
-      <i class="fa fa-chevron-circle-right"></i>
-    </a>
-  </p>
+<div class="row search">
+  <div class="searchRow">
+    <form class="form-inline" role="form">
+      <div class="form-group">
+        <input type="search" class="form-control" id="k" name="k" placeholder="Enter TV Show or Movie title">
+        <autocomplete ng-model="result" attr-placeholder="type to search movies..." click-activation="true"
+                      data="movies" on-type="updateMovies" on-select="doSomethingElse"></autocomplete>
+        <input id="cn" name="cn" type="hidden" value="false"/>
+      </div>
+      <button type="submit" class="btn">Search</button>
+    </form>
+  </div>
 </div>
-
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-
-  <div class='container'>
-    <div ng-controller='MainCtrl'>
-      You are known as: <span ng-bind="nickName"></span>.
-      <br/>
-      Change your nickname with <code>/nick [yourNewNick]</code>
-
-      <div class='row'>
-        <div class='col-md-9'>
-        <textarea style='width: 100%; height: 200px'
-                  ng-disable='true' ng-model='messageLog'></textarea>
-        </div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-primary">
+      <div class="panel-heading">New episodes</div>
+      <div class="panel-body">
+        Panel content
       </div>
-      <div class='row'>
-        &nbsp;
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-primary">
+      <div class="panel-heading">New movies</div>
+      <div class="panel-body">
+        Panel content
       </div>
-      <div class='row'>
-        <div class='col-md-8'>
-          <form role='form' novalidate name='form'>
-            <div class='form-group'>
-              <input type='text' style='width: 80%'
-                     required
-                     ng-max='50'
-                     ng-model='message'
-                     focus>
-              <button class='btn btn-sm btn-primary'
-                      ng-enable='form.$valid'
-                      ng-click="sendMessage(message)">Send!
-              </button>
-            </div>
-          </form>
-        </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Downloads</div>
+      <div class="panel-body">
+        Panel content
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Recommended</div>
+      <div class="panel-body">
+        Panel content
       </div>
     </div>
   </div>

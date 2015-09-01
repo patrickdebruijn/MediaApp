@@ -18,10 +18,10 @@ angular
         'ngRoute',
         'ngSanitize',
         'ngTouch',
-        'btford.socket-io'
+        'btford.socket-io',
+        'ui-notification'
     ])
-    .value('nickName', 'anonymous')
-    .config(function ($routeProvider) {
+    .config(function ($routeProvider, $locationProvider, NotificationProvider) {
         $routeProvider
             .when('/', {
                 templateUrl: 'views/main.html',
@@ -38,7 +38,27 @@ angular
                 controller: 'SignupCtrl',
                 controllerAs: 'signup'
             })
+            .when('/signup', {
+                templateUrl: 'views/signup.html',
+                controller: 'SignupCtrl',
+                controllerAs: 'signup'
+            })
+            .when('/login', {
+                templateUrl: 'views/login.html',
+                controller: 'LoginCtrl',
+                controllerAs: 'login'
+            })
             .otherwise({
                 redirectTo: '/'
             });
+        NotificationProvider.setOptions({
+            delay: 10000,
+            startBottom: 20,
+            startRight: 10,
+            verticalSpacing: 20,
+            horizontalSpacing: 20,
+            positionX: 'right',
+            positionY: 'bottom'
+        });
+        $locationProvider.html5Mode(true);
     });
